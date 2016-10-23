@@ -6,7 +6,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement (name = "student")
+@XmlRootElement(name = "student")
 public class Student {
 
     @DecimalMin(value = "15", message = "Student shall be minimum of age 15 yr")
@@ -21,7 +21,7 @@ public class Student {
 
     @Pattern(message = "Invalid Email Address->" +
             "Valid emails:user@gmail.com or my.user@domain.com etc.",
-            regexp = "^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
+            regexp = "^[a-zA-Z0-9_!#$%&ï¿½*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
     private String email;
 
 
@@ -45,15 +45,8 @@ public class Student {
 
     }
 
-    public Student(int age, String firstName, String lastName, String email) {
-        this.age = age;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
-
     public String toString() {
         return String.format("firstName : %s, lastName: %s, email : %s, age: %s",
-                                firstName,lastName,email,age);
+                firstName, lastName, email, age);
     }
 }
